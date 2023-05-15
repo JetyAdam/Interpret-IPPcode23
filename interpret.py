@@ -149,7 +149,7 @@ class Move(Instruction):
         self._arg2: Argument = arg2
 
     def execute(self):
-        print('Executing MOVE instruction')
+        # print('Executing MOVE instruction')
 
         if self._arg2.getType() == "var" and self._arg1.getType() == "var":
             varVal = super().getVarFromFrame(self._arg2.getVal())
@@ -211,7 +211,7 @@ class Defvar(Instruction):
             exit(53)
 
     def execute(self):
-        print("Executing DEFVAR instruction")
+        # print("Executing DEFVAR instruction")
         info = self._arg.getVal().split("@")
         name: str = info[1]
         frame: str = info[0]
@@ -431,10 +431,9 @@ class Read(Instruction):
 
 class Write(Instruction):
 
-    def __init__(self, argument: Argument, order: int, file):
+    def __init__(self, argument: Argument, order: int):
         super().__init__("WRITE", order)
         self._arg: Argument = argument
-        self._file = file
 
     def execute(self):
         print('Executing WRITE instruction')
@@ -446,7 +445,7 @@ class Write(Instruction):
             output = output.replace("\\035", "#")
             output = output.replace("\\009", "\t")
             output = output.replace("\\092", "\\")
-            print(output, file=self._file, end='')
+            print(output, end='')
         if typ == "var":
             value = super().getVarFromFrame(self._arg.getVal())
             output = value.replace("\\032", " ")
@@ -454,18 +453,18 @@ class Write(Instruction):
             output = output.replace("\\092", "\\")
             output = output.replace("\\010", "\n")
             output = output.replace("\\009", "\t")
-            print(output, file=self._file, end='')
+            print(output, end='')
         if typ == "bool":
             write = self._arg.getVal()
             if write == "false":
-                print("false", file=self._file, end='')
+                print("false", end='')
             elif write == "true":
-                print("true", file=self._file, end='')
+                print("true", end='')
         if typ == "int":
             value = int(self._arg.getVal())
-            print(value, file=self._file, end='')
+            print(value, end='')
         if typ == "nil":
-            print("", file=self._file, end='')
+            print("", end='')
 
 #Instrukce pro práci s řetězci
 class Concat(Instruction):
@@ -854,7 +853,7 @@ class Factory:
                     arg = Argument(1, elem[0].attrib["type"], elem[0].text)
                 except IndexError:
                     exit(32)
-                return Write(arg, factoryOrder, sys.stdout)
+                return Write(arg, factoryOrder)
             case "DPRINT":
                 if len(elem) > 1:
                     exit(32)
@@ -1043,6 +1042,7 @@ if __name__ == '__main__':
 
     # Nalezení návěští a sběr pořadí instrukcí
     for elem in root:
+        elem.set("executed", "False")
         opcode = ""
         order = 0
         try:
@@ -1082,11 +1082,11 @@ if __name__ == '__main__':
     currOrder = orders[i] #Pořadí aktuální instrukce
 
     #Vykonání všech instrukcí
-    print("Before loop: currOrder =", currOrder)
+    # print("Before loop: currOrder =", currOrder)
     executedOrders = set()
     for i in range(len(orders)):
         currOrder = orders[i]
-        executedOrders.add(currOrder)
+        
 
         element = None 
 
@@ -1097,17 +1097,22 @@ if __name__ == '__main__':
                 break
 
         opcode = element.attrib["opcode"]
+        executed = element.attrib["executed"]
 
         opcodeUpper = opcode.upper()
 
         print("Current instruction:", opcodeUpper)
 
-        if currOrder in executedOrders:
+        if executed == "True":
             print("Skipping already executed instruction")
+            executedOrders.add(currOrder)
             continue
         else:
+            executedOrders.add(currOrder)
+
             match opcodeUpper:
                 case "JUMP" | "CALL":
+                    element.set("executed", "True")
                     label = labels.get(element[0].text)
                     if opcode.upper() == "CALL":
                         calls.append(order)
@@ -1117,6 +1122,7 @@ if __name__ == '__main__':
                     i = orders.index(label)
 
                 case "JUMPIFEQ" | "JUMPIFNEQ":
+                    element.set("executed", "True")
                     inst = Factory.resolve(opcode,  element)
                     jump = inst.execute()
                     if jump and opcode.upper() == "JUMPIFEQ":
@@ -1130,20 +1136,64 @@ if __name__ == '__main__':
                             exit(52)
                         i = orders.index(label)
                 case "RETURN":
+                    element.set("executed", "True")
                     ret = calls.pop()
                     if i is None:
                         exit(56)
                     i = orders.index(ret)
                 case "DEFVAR":
+                    element.set("executed", "True")
                     print("Executing DEFVAR instruction")
                     inst = Factory.resolve(opcode, element)
                     inst.execute()
                 case "MOVE":
+                    element.set("executed", "True")
                     print("Executing MOVE instruction")
                     inst = Factory.resolve(opcode, element)
                     inst.execute()
-                case "WRITE":
-                    print("Executing WRITE instruction")
+                case ("WRITE" | "READ"):
+                    element.set("executed", "True")
+                    print("Executing WRITE/READ instruction")
+                    inst = Factory.resolve(opcode, element)
+                    inst.execute()
+                case "CREATEFRAME":
+                    element.set("executed", "True")
+                    print("Executing CREATEFRAME instruction")
+                    inst = Factory.resolve(opcode, element)
+                    inst.execute()
+                case "PUSHFRAME":
+                    element.set("executed", "True")
+                    print("Executing PUSHFRAME instruction")
+                    inst = Factory.resolve(opcode, element)
+                    inst.execute()
+                case "POPFRAME":
+                    element.set("executed", "True")
+                    print("Executing POPFRAME instruction")
+                    inst = Factory.resolve(opcode, element)
+                    inst.execute()
+                case "PUSHS":
+                    element.set("executed", "True")
+                    print("Executing POPFRAME instruction")
+                    inst = Factory.resolve(opcode, element)
+                    inst.execute()
+                case "POPS":
+                    element.set("executed", "True")
+                    print("Executing POPFRAME instruction")
+                    inst = Factory.resolve(opcode, element)
+                    inst.execute()
+                case "ADD" | "SUB" | "MUL" | "IDIV" | "LT" | "GT" | "EQ" | "AND" | "OR" | "NOT" | "INT2CHAR" | "STRI2INT":
+                    element.set("executed", "True")
+                    print("Executing ADD (or other of the same kind) instruction")
+                    inst = Factory.resolve(opcode, element)
+                    inst.execute()
+                case "CONCAT" | "STRLEN" | "GETCHAR" | "SETCHAR":
+                    element.set("executed", "True")
+                    print("Executing CONCAT (etc) instruction")
+                    inst = Factory.resolve(opcode, element)
+                    inst.execute()
+                case "TYPE":
+                    element.set("executed", "True")
+                    print("Executing TYPE instruction")
                     inst = Factory.resolve(opcode, element)
                     inst.execute()
                 case _:
@@ -1151,7 +1201,7 @@ if __name__ == '__main__':
                     if inst is None:
                         exit(32)
                     inst.execute()
-
+                    element.set("executed", "True")
             
         i += 1
         if i >= len(orders):
@@ -1159,4 +1209,4 @@ if __name__ == '__main__':
         else:
             currOrder = orders[i]
 
-    print("After loop: currOrder =", currOrder)
+    # print("After loop: currOrder =", currOrder)
