@@ -13,527 +13,117 @@
 <body>
     <h1 style="text-align: center;">Test result</h1>
     <h2>Tests run: 134</h2>
-    <h2>Passed: 14 </h2>
-    <h2>Failed: 120 </h2>
+    <h2>Passed: 44 </h2>
+    <h2>Failed: 90 </h2>
     <hr>
     <h3 style="text-align: center; color:red">Failed tests</h3><hr><h4>ipp-2023-tests/interpret-only/xml_structure</h4><table><tr><th>Test name</th><th>Return code</th><th>Expected return code</th><th>Output</th><th>Expected output</th></tr>
-<tr><td>arg_order1</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction</textarea></td><td><textarea readonly rows=5 cols=50>Hello</textarea></td></tr>
-
-<tr><td>arg_quantity1</td><td>32</td><td>32</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
-
-<tr><td>arg_quantity2</td><td>32</td><td>32</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
-
-<tr><td>arg_quantity3</td><td>32</td><td>32</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>arg_order1</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>Hello</textarea></td></tr>
 
 <tr><td>duplicate_order</td><td>0</td><td>32
-</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
-
-<tr><td>instruction_order1</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-Hello</textarea></td><td><textarea readonly rows=5 cols=50>Hello</textarea></td></tr>
-
-<tr><td>space_order</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-Hello</textarea></td><td><textarea readonly rows=5 cols=50>Hello</textarea></td></tr>
-
-<tr><td>wrong_language</td><td>32</td><td>32</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFAR</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
-
-<tr><td>wrong_opcode</td><td>32</td><td>32</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFAR</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
-
-<tr><td>wrong_tag2</td><td>32</td><td>32</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
 </table>
 <hr><h4>ipp-2023-tests/interpret-only/valid</h4><table><tr><th>Test name</th><th>Return code</th><th>Expected return code</th><th>Output</th><th>Expected output</th></tr>
-<tr><td>all_program_attributes</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: WRITE
-Executing WRITE/READ instruction
-0</textarea></td><td><textarea readonly rows=5 cols=50>0</textarea></td></tr>
+<tr><td>defvar_move</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>42</textarea></td></tr>
 
-<tr><td>defvar_move</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction</textarea></td><td><textarea readonly rows=5 cols=50>42</textarea></td></tr>
+<tr><td>dprint</td><td>1</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>dprint</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DPRINT</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
-
-<tr><td>exit</td><td>42</td><td>42</td><td><textarea readonly rows=5 cols=50>Current instruction: EXIT</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
-
-<tr><td>label_call_return</td><td>1</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: JUMP
-Current instruction: LABEL
-Current instruction: WRITE
-Executing WRITE/READ instruction
-Oh,yeah,motherfucker!Current instruction: RETURN</textarea></td><td><textarea readonly rows=5 cols=50>Oh,yeah,motherfucker!</textarea></td></tr>
-
-<tr><td>read</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: READ
-Executing WRITE/READ instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-42Current instruction: READ
-Executing WRITE/READ instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-just a string!Current instruction: READ
-Executing WRITE/READ instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-true</textarea></td><td><textarea readonly rows=5 cols=50>42just a string!true</textarea></td></tr>
-
-<tr><td>stack_test</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: POPS
-Executing POPFRAME instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-ahojCurrent instruction: POPS
-Executing POPFRAME instruction
-Current instruction: INT2CHAR
-Executing ADD (or other of the same kind) instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
- Current instruction: POPS
-Executing POPFRAME instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-světe</textarea></td><td><textarea readonly rows=5 cols=50>ahoj světe</textarea></td></tr>
-
-<tr><td>type</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: TYPE
-Executing TYPE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-Current instruction: TYPE
-Executing TYPE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-int</textarea></td><td><textarea readonly rows=5 cols=50>int</textarea></td></tr>
-
-<tr><td>write</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: WRITE
-Executing WRITE/READ instruction
-0Current instruction: WRITE
-Executing WRITE/READ instruction
-abc</textarea></td><td><textarea readonly rows=5 cols=50>0abc</textarea></td></tr>
-
-</table>
-<hr><h4>ipp-2023-tests/interpret-only/valid/order</h4><table><tr><th>Test name</th><th>Return code</th><th>Expected return code</th><th>Output</th><th>Expected output</th></tr>
-<tr><td>discontinuously_ordered_instructions</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: WRITE
-Executing WRITE/READ instruction
-2Current instruction: WRITE
-Executing WRITE/READ instruction
-1Current instruction: WRITE
-Executing WRITE/READ instruction
-cdCurrent instruction: WRITE
-Executing WRITE/READ instruction
-0Current instruction: WRITE
-Executing WRITE/READ instruction
-abCurrent instruction: WRITE
-Executing WRITE/READ instruction
-f</textarea></td><td><textarea readonly rows=5 cols=50>21cd0abf</textarea></td></tr>
-
-<tr><td>unordered_instructions</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: WRITE
-Executing WRITE/READ instruction
-2Current instruction: WRITE
-Executing WRITE/READ instruction
-1Current instruction: WRITE
-Executing WRITE/READ instruction
-cdCurrent instruction: WRITE
-Executing WRITE/READ instruction
-0Current instruction: WRITE
-Executing WRITE/READ instruction
-abCurrent instruction: WRITE
-Executing WRITE/READ instruction
-f</textarea></td><td><textarea readonly rows=5 cols=50>21cd0abf</textarea></td></tr>
+<tr><td>label_call_return</td><td>1</td><td>0</td><td><textarea readonly rows=5 cols=50>Oh,yeah,motherfucker!</textarea></td><td><textarea readonly rows=5 cols=50>Oh,yeah,motherfucker!</textarea></td></tr>
 
 </table>
 <hr><h4>ipp-2023-tests/interpret-only/stack_tests</h4><table><tr><th>Test name</th><th>Return code</th><th>Expected return code</th><th>Output</th><th>Expected output</th></tr>
-<tr><td>stack_adds</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: ADDS</textarea></td><td><textarea readonly rows=5 cols=50>03</textarea></td></tr>
+<tr><td>stack_adds</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>03</textarea></td></tr>
 
-<tr><td>stack_adds_notint</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: ADDS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>stack_adds_notint</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>stack_ands</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: ANDS</textarea></td><td><textarea readonly rows=5 cols=50>truefalsefalsefalse</textarea></td></tr>
+<tr><td>stack_ands</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>truefalsefalsefalse</textarea></td></tr>
 
-<tr><td>stack_ands_notbool</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: ANDS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>stack_ands_notbool</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>stack_clears</td><td>32</td><td>56</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: CLEARS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>stack_clears</td><td>32</td><td>56</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>stack_eqs</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: EQS</textarea></td><td><textarea readonly rows=5 cols=50>truetruefalsetruetruefalsefalsefalse</textarea></td></tr>
+<tr><td>stack_eqs</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>truetruefalsetruetruefalsefalsefalse</textarea></td></tr>
 
 <tr><td>stack_eqs_differenttype</td><td>32</td><td>53
-</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: EQS</textarea></td><td><textarea readonly rows=5 cols=50>false</textarea></td></tr>
+</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>false</textarea></td></tr>
 
-<tr><td>stack_eqs_differenttype_nil</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: EQS</textarea></td><td><textarea readonly rows=5 cols=50>false</textarea></td></tr>
+<tr><td>stack_eqs_differenttype_nil</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>false</textarea></td></tr>
 
-<tr><td>stack_eqs_nil</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: EQS</textarea></td><td><textarea readonly rows=5 cols=50>falsetrue</textarea></td></tr>
+<tr><td>stack_eqs_nil</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>falsetrue</textarea></td></tr>
 
-<tr><td>stack_gts</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: GTS</textarea></td><td><textarea readonly rows=5 cols=50>falsefalsefalsefalsefalsetruetruetrue</textarea></td></tr>
+<tr><td>stack_gts</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>falsefalsefalsefalsefalsetruetruetrue</textarea></td></tr>
 
-<tr><td>stack_gts_differenttype</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: GTS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>stack_gts_differenttype</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>stack_gts_nil</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: GTS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>stack_gts_nil</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>stack_idivs</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: IDIVS</textarea></td><td><textarea readonly rows=5 cols=50>-21</textarea></td></tr>
+<tr><td>stack_idivs</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>-21</textarea></td></tr>
 
-<tr><td>stack_idivs_notint</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: IDIVS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>stack_idivs_notint</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>stack_int2chars</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: INT2CHARS</textarea></td><td><textarea readonly rows=5 cols=50>E</textarea></td></tr>
+<tr><td>stack_int2chars</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>E</textarea></td></tr>
 
-<tr><td>stack_int2chars_notnumber</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: INT2CHARS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>stack_int2chars_notnumber</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>stack_int2chars_wrongnumber</td><td>32</td><td>58</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: INT2CHARS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>stack_int2chars_wrongnumber</td><td>32</td><td>58</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>stack_jumpifeqs_bool</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: JUMPIFEQS</textarea></td><td><textarea readonly rows=5 cols=50>noice</textarea></td></tr>
+<tr><td>stack_jumpifeqs_bool</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>noice</textarea></td></tr>
 
-<tr><td>stack_jumpifeqs_differenttype</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: JUMPIFEQS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>stack_jumpifeqs_differenttype</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
 <tr><td>stack_jumpifeqs_differenttype_nil</td><td>32</td><td>0
-</td><td><textarea readonly rows=5 cols=50>Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: JUMPIFEQS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>stack_jumpifeqs_int</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: JUMPIFEQS</textarea></td><td><textarea readonly rows=5 cols=50>noice</textarea></td></tr>
+<tr><td>stack_jumpifeqs_int</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>noice</textarea></td></tr>
 
-<tr><td>stack_jumpifeqs_nil</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: JUMPIFEQS</textarea></td><td><textarea readonly rows=5 cols=50>noice</textarea></td></tr>
+<tr><td>stack_jumpifeqs_nil</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>noice</textarea></td></tr>
 
-<tr><td>stack_jumpifeqs_string</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: JUMPIFEQS</textarea></td><td><textarea readonly rows=5 cols=50>noice</textarea></td></tr>
+<tr><td>stack_jumpifeqs_string</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>noice</textarea></td></tr>
 
-<tr><td>stack_jumpifneqs_bool</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: JUMPIFNEQS</textarea></td><td><textarea readonly rows=5 cols=50>noice</textarea></td></tr>
+<tr><td>stack_jumpifneqs_bool</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>noice</textarea></td></tr>
 
-<tr><td>stack_jumpifneqs_differenttype</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: JUMPIFNEQS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>stack_jumpifneqs_differenttype</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
 <tr><td>stack_jumpifneqs_differenttype_nil</td><td>32</td><td>0
-</td><td><textarea readonly rows=5 cols=50>Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: JUMPIFNEQS</textarea></td><td><textarea readonly rows=5 cols=50>noice</textarea></td></tr>
+</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>noice</textarea></td></tr>
 
-<tr><td>stack_jumpifneqs_int</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: JUMPIFNEQS</textarea></td><td><textarea readonly rows=5 cols=50>noice</textarea></td></tr>
+<tr><td>stack_jumpifneqs_int</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>noice</textarea></td></tr>
 
-<tr><td>stack_jumpifneqs_string</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: JUMPIFNEQS</textarea></td><td><textarea readonly rows=5 cols=50>noice</textarea></td></tr>
+<tr><td>stack_jumpifneqs_string</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>noice</textarea></td></tr>
 
-<tr><td>stack_lts</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: LTS</textarea></td><td><textarea readonly rows=5 cols=50>truetruetruefalsefalsefalsefalsefalse</textarea></td></tr>
+<tr><td>stack_lts</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>truetruetruefalsefalsefalsefalsefalse</textarea></td></tr>
 
-<tr><td>stack_lts_differenttype</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: LTS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>stack_lts_differenttype</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>stack_lts_nil</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: LTS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>stack_lts_nil</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>stack_muls</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: MULS</textarea></td><td><textarea readonly rows=5 cols=50>-166</textarea></td></tr>
+<tr><td>stack_muls</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>-166</textarea></td></tr>
 
-<tr><td>stack_muls_notint</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: MULS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>stack_muls_notint</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>stack_nots</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: NOTS</textarea></td><td><textarea readonly rows=5 cols=50>falsetrue</textarea></td></tr>
+<tr><td>stack_nots</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>falsetrue</textarea></td></tr>
 
-<tr><td>stack_nots_notbool</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: NOTS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>stack_nots_notbool</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>stack_ors</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: ORS</textarea></td><td><textarea readonly rows=5 cols=50>truetruetruefalse</textarea></td></tr>
+<tr><td>stack_ors</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>truetruetruefalse</textarea></td></tr>
 
-<tr><td>stack_ors_notbool</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: ORS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>stack_ors_notbool</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>stack_stri2ints</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: STRI2INTS</textarea></td><td><textarea readonly rows=5 cols=50>69</textarea></td></tr>
+<tr><td>stack_stri2ints</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>69</textarea></td></tr>
 
-<tr><td>stack_stri2ints_notnumber</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: STRI2INTS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>stack_stri2ints_notnumber</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>stack_stri2ints_notstring</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: STRI2INTS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>stack_stri2ints_notstring</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>stack_stri2ints_outofbounds</td><td>32</td><td>58</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: STRI2INTS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>stack_stri2ints_outofbounds</td><td>32</td><td>58</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>stack_subs</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: SUBS</textarea></td><td><textarea readonly rows=5 cols=50>8-1</textarea></td></tr>
+<tr><td>stack_subs</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>8-1</textarea></td></tr>
 
-<tr><td>stack_subs_notint</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: SUBS</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>stack_subs_notint</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
 </table>
 <hr><h4>ipp-2023-tests/interpret-only/stack_tests/stack_calc</h4><table><tr><th>Test name</th><th>Return code</th><th>Expected return code</th><th>Output</th><th>Expected output</th></tr>
-<tr><td>kalkulacka_STACK_rozsireni</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: LABEL
-Current instruction: WRITE
-Executing WRITE/READ instruction
-Zadejte vaši operaci (+,-,*,/) nebo e pro ukončení:Current instruction: READ
-Executing WRITE/READ instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: JUMPIFEQS</textarea></td><td><textarea readonly rows=5 cols=50>Zadejte vaši operaci (+,-,*,/) nebo e pro ukončení:Zadejte číslo 1:
+<tr><td>kalkulacka_STACK_rozsireni</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Zadejte vaši operaci (+,-,*,/) nebo e pro ukončení:</textarea></td><td><textarea readonly rows=5 cols=50>Zadejte vaši operaci (+,-,*,/) nebo e pro ukončení:Zadejte číslo 1:
 Zadejte číslo 2:
 Váš výsledek: 26
 Zadejte vaši operaci (+,-,*,/) nebo e pro ukončení:Zadejte číslo 1:
@@ -550,548 +140,117 @@ Zadejte vaši operaci (+,-,*,/) nebo e pro ukončení:</textarea></td></tr>
 </table>
 <hr><h4>ipp-2023-tests/interpret-only/jumps</h4><table><tr><th>Test name</th><th>Return code</th><th>Expected return code</th><th>Output</th><th>Expected output</th></tr>
 <tr><td>jumpForward</td><td>0</td><td>0
-</td><td><textarea readonly rows=5 cols=50>Current instruction: JUMP
-Current instruction: WRITE
-Executing WRITE/READ instruction
-didn't jumpCurrent instruction: LABEL
-Current instruction: WRITE
-Executing WRITE/READ instruction
-did jump</textarea></td><td><textarea readonly rows=5 cols=50>did jump</textarea></td></tr>
+</td><td><textarea readonly rows=5 cols=50>didn't jumpdid jump</textarea></td><td><textarea readonly rows=5 cols=50>did jump</textarea></td></tr>
 
 <tr><td>jumpifeq</td><td>0</td><td>0
-</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: LABEL
-Current instruction: JUMPIFEQ
-Current instruction: ADD
-Executing ADD (or other of the same kind) instruction
-Current instruction: JUMP
-Current instruction: LABEL
-Current instruction: WRITE
-Executing WRITE/READ instruction
-1</textarea></td><td><textarea readonly rows=5 cols=50>5</textarea></td></tr>
-
-<tr><td>nonexistLabel</td><td>52</td><td>52</td><td><textarea readonly rows=5 cols=50>Current instruction: LABEL
-Current instruction: JUMP</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+</td><td><textarea readonly rows=5 cols=50>1</textarea></td><td><textarea readonly rows=5 cols=50>5</textarea></td></tr>
 
 </table>
 <hr><h4>ipp-2023-tests/interpret-only/frames</h4><table><tr><th>Test name</th><th>Return code</th><th>Expected return code</th><th>Output</th><th>Expected output</th></tr>
-<tr><td>defvarnoTF</td><td>55</td><td>55</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
-
-<tr><td>popEmpty</td><td>55</td><td>55</td><td><textarea readonly rows=5 cols=50>Current instruction: POPFRAME
-Executing POPFRAME instruction</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
-
-<tr><td>pushEmpty</td><td>55</td><td>55</td><td><textarea readonly rows=5 cols=50>Current instruction: PUSHFRAME
-Executing PUSHFRAME instruction</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
-
 <tr><td>secondLF</td><td>55</td><td>0
-</td><td><textarea readonly rows=5 cols=50>Current instruction: CREATEFRAME
-Executing CREATEFRAME instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: PUSHFRAME
-Executing PUSHFRAME instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-5Current instruction: CREATEFRAME
-Executing CREATEFRAME instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: PUSHFRAME
-Executing PUSHFRAME instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-10Current instruction: POPFRAME
-Executing POPFRAME instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction</textarea></td><td><textarea readonly rows=5 cols=50>510510</textarea></td></tr>
-
-<tr><td>TFafterPush</td><td>55</td><td>55</td><td><textarea readonly rows=5 cols=50>Current instruction: CREATEFRAME
-Executing CREATEFRAME instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHFRAME
-Executing PUSHFRAME instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+</td><td><textarea readonly rows=5 cols=50>510</textarea></td><td><textarea readonly rows=5 cols=50>510510</textarea></td></tr>
 
 </table>
 <hr><h4>ipp-2023-tests/interpret-only/float_tests</h4><table><tr><th>Test name</th><th>Return code</th><th>Expected return code</th><th>Output</th><th>Expected output</th></tr>
-<tr><td>float_accepted_numbers</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-1Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
--1Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-0x1Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-1.Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-1.0Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-1p+0Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-1p-1Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-1p0</textarea></td><td><textarea readonly rows=5 cols=50>0x1.0000000000000p+0-0x1.0000000000000p+00x1.0000000000000p+00x1.0000000000000p+00x1.0000000000000p+00x1.0000000000000p+00x1.0000000000000p-10x1.0000000000000p+0</textarea></td></tr>
+<tr><td>float_accepted_numbers</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>1-10x11.1.01p+01p-11p0</textarea></td><td><textarea readonly rows=5 cols=50>0x1.0000000000000p+0-0x1.0000000000000p+00x1.0000000000000p+00x1.0000000000000p+00x1.0000000000000p+00x1.0000000000000p+00x1.0000000000000p-10x1.0000000000000p+0</textarea></td></tr>
 
-<tr><td>float_accepted_numbers2</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
--0x1Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-+0x1Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
--1.0Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
--1p+0</textarea></td><td><textarea readonly rows=5 cols=50>-0x1.0000000000000p+00x1.0000000000000p+0-0x1.0000000000000p+0-0x1.0000000000000p+0</textarea></td></tr>
+<tr><td>float_accepted_numbers2</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>-0x1+0x1-1.0-1p+0</textarea></td><td><textarea readonly rows=5 cols=50>-0x1.0000000000000p+00x1.0000000000000p+0-0x1.0000000000000p+0-0x1.0000000000000p+0</textarea></td></tr>
 
-<tr><td>float_accepted_numbers3</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: POPS
-Executing POPFRAME instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-0x1.0Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: POPS
-Executing POPFRAME instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-0x1p-0</textarea></td><td><textarea readonly rows=5 cols=50>0x1.0000000000000p+00x1.0000000000000p+0</textarea></td></tr>
+<tr><td>float_accepted_numbers3</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>0x1.00x1p-0</textarea></td><td><textarea readonly rows=5 cols=50>0x1.0000000000000p+00x1.0000000000000p+0</textarea></td></tr>
 
-<tr><td>float_accepted_numbers4</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction</textarea></td><td><textarea readonly rows=5 cols=50>0x1.0000000000000p+00x1.0000000000000p+0</textarea></td></tr>
+<tr><td>float_accepted_numbers4</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>0x1.0000000000000p+00x1.0000000000000p+0</textarea></td></tr>
 
-<tr><td>float_accepted_numbers5</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: READ
-Executing WRITE/READ instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-nilCurrent instruction: READ
-Executing WRITE/READ instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-nil</textarea></td><td><textarea readonly rows=5 cols=50>0x1.0000000000000p+00x1.0000000000000p+0</textarea></td></tr>
+<tr><td>float_accepted_numbers5</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>nilnil</textarea></td><td><textarea readonly rows=5 cols=50>0x1.0000000000000p+00x1.0000000000000p+0</textarea></td></tr>
 
-<tr><td>float_accepted_numbers6</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
--0x1.175c57117ca21p+27Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-.1</textarea></td><td><textarea readonly rows=5 cols=50>-0x1.175c57117ca21p+270x1.0000000000000p-4</textarea></td></tr>
+<tr><td>float_accepted_numbers6</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>-0x1.175c57117ca21p+27.1</textarea></td><td><textarea readonly rows=5 cols=50>-0x1.175c57117ca21p+270x1.0000000000000p-4</textarea></td></tr>
 
-<tr><td>float_add_float_float</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: ADD
-Executing ADD (or other of the same kind) instruction</textarea></td><td><textarea readonly rows=5 cols=50>0x1.2000000000000p+1</textarea></td></tr>
+<tr><td>float_add_float_float</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>0x1.2000000000000p+1</textarea></td></tr>
 
-<tr><td>float_add_float_int</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: ADD
-Executing ADD (or other of the same kind) instruction</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_add_float_int</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_div_float_float</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: DIV</textarea></td><td><textarea readonly rows=5 cols=50>-0x1.0000000000000p+0</textarea></td></tr>
+<tr><td>float_div_float_float</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>-0x1.0000000000000p+0</textarea></td></tr>
 
-<tr><td>float_div_float_int</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: DIV</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_div_float_int</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_div_zero</td><td>32</td><td>57</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: DIV</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_div_zero</td><td>32</td><td>57</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_float2int</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: FLOAT2INT</textarea></td><td><textarea readonly rows=5 cols=50>2</textarea></td></tr>
+<tr><td>float_float2int</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>2</textarea></td></tr>
 
-<tr><td>float_float2int_undefined_frame</td><td>32</td><td>55</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: FLOAT2INT</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_float2int_undefined_frame</td><td>32</td><td>55</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_float2int_undefined_frame2</td><td>32</td><td>55</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: FLOAT2INT</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_float2int_undefined_frame2</td><td>32</td><td>55</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_float2int_undefined_var</td><td>32</td><td>54</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: FLOAT2INT</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_float2int_undefined_var</td><td>32</td><td>54</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_float2int_undefined_var2</td><td>32</td><td>54</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: FLOAT2INT</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_float2int_undefined_var2</td><td>32</td><td>54</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_float2int_uninicialized_variable</td><td>32</td><td>56</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: FLOAT2INT</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_float2int_uninicialized_variable</td><td>32</td><td>56</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_float2int_wrong_operand</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: FLOAT2INT</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_float2int_wrong_operand</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_float2int_wrong_operand2</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: FLOAT2INT</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_float2int_wrong_operand2</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_int2float</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: INT2FLOAT</textarea></td><td><textarea readonly rows=5 cols=50>0x1.0000000000000p+1</textarea></td></tr>
+<tr><td>float_int2float</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>0x1.0000000000000p+1</textarea></td></tr>
 
-<tr><td>float_int2float_undefined_frame</td><td>32</td><td>55</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: INT2FLOAT</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_int2float_undefined_frame</td><td>32</td><td>55</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_int2float_undefined_frame2</td><td>32</td><td>55</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: INT2FLOAT</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_int2float_undefined_frame2</td><td>32</td><td>55</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_int2float_undefined_var</td><td>32</td><td>54</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: INT2FLOAT</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_int2float_undefined_var</td><td>32</td><td>54</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_int2float_undefined_var2</td><td>32</td><td>54</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: INT2FLOAT</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_int2float_undefined_var2</td><td>32</td><td>54</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_int2float_uninicialized_variable</td><td>32</td><td>56</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: INT2FLOAT</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_int2float_uninicialized_variable</td><td>32</td><td>56</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_int2float_wrong_operand</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: INT2FLOAT</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_int2float_wrong_operand</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_int2float_wrong_operand2</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: INT2FLOAT</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_int2float_wrong_operand2</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_move</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-0x1.2000p+0</textarea></td><td><textarea readonly rows=5 cols=50>0x1.2000000000000p+0</textarea></td></tr>
+<tr><td>float_move</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>0x1.2000p+0</textarea></td><td><textarea readonly rows=5 cols=50>0x1.2000000000000p+0</textarea></td></tr>
 
-<tr><td>float_move2</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
--0x1.175c57117ca21p+27</textarea></td><td><textarea readonly rows=5 cols=50>-0x1.175c57117ca21p+27</textarea></td></tr>
+<tr><td>float_mul_float_float</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>-0x1.4400000000000p+0</textarea></td></tr>
 
-<tr><td>float_mul_float_float</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: MUL
-Executing ADD (or other of the same kind) instruction</textarea></td><td><textarea readonly rows=5 cols=50>-0x1.4400000000000p+0</textarea></td></tr>
+<tr><td>float_mul_float_int</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_mul_float_int</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: MUL
-Executing ADD (or other of the same kind) instruction</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_pushs</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>0x1.200p+0</textarea></td><td><textarea readonly rows=5 cols=50>0x1.2000000000000p+0</textarea></td></tr>
 
-<tr><td>float_pushs</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: PUSHS
-Executing POPFRAME instruction
-Current instruction: POPS
-Executing POPFRAME instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-0x1.200p+0</textarea></td><td><textarea readonly rows=5 cols=50>0x1.2000000000000p+0</textarea></td></tr>
+<tr><td>float_read</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>nil</textarea></td><td><textarea readonly rows=5 cols=50>0x1.2000000000000p+0</textarea></td></tr>
 
-<tr><td>float_read</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: READ
-Executing WRITE/READ instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-nil</textarea></td><td><textarea readonly rows=5 cols=50>0x1.2000000000000p+0</textarea></td></tr>
+<tr><td>float_read_wrongfloat</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>nil</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_read_wrongfloat</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: READ
-Executing WRITE/READ instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-nil</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_sub_float_float</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50>0x0.0p+0</textarea></td></tr>
 
-<tr><td>float_sub_float_float</td><td>32</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: SUB
-Executing ADD (or other of the same kind) instruction</textarea></td><td><textarea readonly rows=5 cols=50>0x0.0p+0</textarea></td></tr>
+<tr><td>float_sub_float_int</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>float_sub_float_int</td><td>32</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: SUB
-Executing ADD (or other of the same kind) instruction</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
-
-<tr><td>float_tf_lf</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: CREATEFRAME
-Executing CREATEFRAME instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-0x1.200p+0Current instruction: PUSHFRAME
-Executing PUSHFRAME instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-0x1.200p+0</textarea></td><td><textarea readonly rows=5 cols=50>0x1.2000000000000p+00x1.2000000000000p+0</textarea></td></tr>
-
-</table>
-<hr><h4>ipp-2023-tests/interpret-only/arithmetic</h4><table><tr><th>Test name</th><th>Return code</th><th>Expected return code</th><th>Output</th><th>Expected output</th></tr>
-<tr><td>correct</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MOVE
-Executing MOVE instruction
-Current instruction: ADD
-Executing ADD (or other of the same kind) instruction
-Current instruction: MUL
-Executing ADD (or other of the same kind) instruction
-Current instruction: SUB
-Executing ADD (or other of the same kind) instruction
-Current instruction: IDIV
-Executing ADD (or other of the same kind) instruction
-Current instruction: WRITE
-Executing WRITE/READ instruction
-3</textarea></td><td><textarea readonly rows=5 cols=50>3</textarea></td></tr>
-
-<tr><td>incorrectInt</td><td>32</td><td>32</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: ADD
-Executing ADD (or other of the same kind) instruction</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
-
-<tr><td>negativeNum</td><td>0</td><td>0
-</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: ADD
-Executing ADD (or other of the same kind) instruction</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
-
-<tr><td>nil</td><td>53</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: MUL
-Executing ADD (or other of the same kind) instruction</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
-
-<tr><td>stringAdd</td><td>53</td><td>53</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: ADD
-Executing ADD (or other of the same kind) instruction</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
-
-<tr><td>zeroDiv</td><td>57</td><td>57</td><td><textarea readonly rows=5 cols=50>Current instruction: DEFVAR
-Executing DEFVAR instruction
-Current instruction: IDIV
-Executing ADD (or other of the same kind) instruction</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>float_tf_lf</td><td>0</td><td>0</td><td><textarea readonly rows=5 cols=50>0x1.200p+00x1.200p+0</textarea></td><td><textarea readonly rows=5 cols=50>0x1.2000000000000p+00x1.2000000000000p+0</textarea></td></tr>
 
 </table>
 <hr><h4>ipp-2023-tests/interpret-only/32</h4><table><tr><th>Test name</th><th>Return code</th><th>Expected return code</th><th>Output</th><th>Expected output</th></tr>
-<tr><td>bad_argument_tag</td><td>32</td><td>32</td><td><textarea readonly rows=5 cols=50>Current instruction: WRITE
-Executing WRITE/READ instruction</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>duplicit_order</td><td>0</td><td>32</td><td><textarea readonly rows=5 cols=50>0</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
-<tr><td>duplicit_order</td><td>0</td><td>32</td><td><textarea readonly rows=5 cols=50>Current instruction: WRITE
-Executing WRITE/READ instruction
-0</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
-
-<tr><td>missing_argument</td><td>32</td><td>32</td><td><textarea readonly rows=5 cols=50>Current instruction: WRITE
-Executing WRITE/READ instruction</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
-
-<tr><td>write_test</td><td>32</td><td>32</td><td><textarea readonly rows=5 cols=50>Current instruction: WRITE
-Executing WRITE/READ instruction
-0Current instruction: PRINT</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+<tr><td>write_test</td><td>32</td><td>32</td><td><textarea readonly rows=5 cols=50>0</textarea></td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
 </table>
 <hr><h3 style="text-align: center; color:green">Passed tests</h3><hr><h4>ipp-2023-tests/interpret-only/xml_structure</h4><table><tr><th>Test name</th><th>Return code</th><th>Output</th></tr>
+<tr><td>arg_quantity1</td><td>32</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+
+<tr><td>arg_quantity2</td><td>32</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+
+<tr><td>arg_quantity3</td><td>32</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+
+<tr><td>instruction_order1</td><td>0</td><td><textarea readonly rows=5 cols=50>Hello</textarea></td></tr>
+
 <tr><td>negative_order</td><td>32</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
+<tr><td>space_order</td><td>0</td><td><textarea readonly rows=5 cols=50>Hello</textarea></td></tr>
+
+<tr><td>wrong_language</td><td>32</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+
+<tr><td>wrong_opcode</td><td>32</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+
 <tr><td>wrong_tag1</td><td>32</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+
+<tr><td>wrong_tag2</td><td>32</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
 <tr><td>xml_format1</td><td>31</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
@@ -1100,12 +259,66 @@ Executing WRITE/READ instruction
 <tr><td>zero_order</td><td>32</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
 </table>
+<hr><h4>ipp-2023-tests/interpret-only/valid</h4><table><tr><th>Test name</th><th>Return code</th><th>Output</th></tr>
+<tr><td>all_program_attributes</td><td>0</td><td><textarea readonly rows=5 cols=50>0</textarea></td></tr>
+
+<tr><td>exit</td><td>42</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+
+<tr><td>read</td><td>0</td><td><textarea readonly rows=5 cols=50>42just a string!true</textarea></td></tr>
+
+<tr><td>stack_test</td><td>0</td><td><textarea readonly rows=5 cols=50>ahoj světe</textarea></td></tr>
+
+<tr><td>type</td><td>0</td><td><textarea readonly rows=5 cols=50>int</textarea></td></tr>
+
+<tr><td>write</td><td>0</td><td><textarea readonly rows=5 cols=50>0abc</textarea></td></tr>
+
+</table>
+<hr><h4>ipp-2023-tests/interpret-only/valid/order</h4><table><tr><th>Test name</th><th>Return code</th><th>Output</th></tr>
+<tr><td>discontinuously_ordered_instructions</td><td>0</td><td><textarea readonly rows=5 cols=50>21cd0abf</textarea></td></tr>
+
+<tr><td>unordered_instructions</td><td>0</td><td><textarea readonly rows=5 cols=50>21cd0abf</textarea></td></tr>
+
+</table>
 <hr><h4>ipp-2023-tests/interpret-only/jumps</h4><table><tr><th>Test name</th><th>Return code</th><th>Output</th></tr>
 <tr><td>duplicateLabel</td><td>52</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
+<tr><td>nonexistLabel</td><td>52</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+
+</table>
+<hr><h4>ipp-2023-tests/interpret-only/frames</h4><table><tr><th>Test name</th><th>Return code</th><th>Output</th></tr>
+<tr><td>defvarnoTF</td><td>55</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+
+<tr><td>popEmpty</td><td>55</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+
+<tr><td>pushEmpty</td><td>55</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+
+<tr><td>TFafterPush</td><td>55</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+
+</table>
+<hr><h4>ipp-2023-tests/interpret-only/float_tests</h4><table><tr><th>Test name</th><th>Return code</th><th>Output</th></tr>
+<tr><td>float_move2</td><td>0</td><td><textarea readonly rows=5 cols=50>-0x1.175c57117ca21p+27</textarea></td></tr>
+
+</table>
+<hr><h4>ipp-2023-tests/interpret-only/arithmetic</h4><table><tr><th>Test name</th><th>Return code</th><th>Output</th></tr>
+<tr><td>correct</td><td>0</td><td><textarea readonly rows=5 cols=50>3</textarea></td></tr>
+
+<tr><td>incorrectInt</td><td>32</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+
+<tr><td>negativeNum</td><td>0</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+
+<tr><td>nil</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+
+<tr><td>stringAdd</td><td>53</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+
+<tr><td>zeroDiv</td><td>57</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+
 </table>
 <hr><h4>ipp-2023-tests/interpret-only/32</h4><table><tr><th>Test name</th><th>Return code</th><th>Output</th></tr>
+<tr><td>bad_argument_tag</td><td>32</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+
 <tr><td>bad_root_element</td><td>32</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
+
+<tr><td>missing_argument</td><td>32</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 
 <tr><td>missing_opcode</td><td>32</td><td><textarea readonly rows=5 cols=50></textarea></td></tr>
 

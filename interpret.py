@@ -436,7 +436,7 @@ class Write(Instruction):
         self._arg: Argument = argument
 
     def execute(self):
-        print('Executing WRITE instruction')
+        # print('Executing WRITE instruction')
         typ = self._arg.getType()
         if typ == "string":
             string = self._arg.getVal()
@@ -1101,10 +1101,10 @@ if __name__ == '__main__':
 
         opcodeUpper = opcode.upper()
 
-        print("Current instruction:", opcodeUpper)
+        # print("Current instruction:", opcodeUpper)
 
         if executed == "True":
-            print("Skipping already executed instruction")
+            # print("Skipping already executed instruction")
             executedOrders.add(currOrder)
             continue
         else:
@@ -1143,57 +1143,57 @@ if __name__ == '__main__':
                     i = orders.index(ret)
                 case "DEFVAR":
                     element.set("executed", "True")
-                    print("Executing DEFVAR instruction")
+                    # print("Executing DEFVAR instruction")
                     inst = Factory.resolve(opcode, element)
                     inst.execute()
                 case "MOVE":
                     element.set("executed", "True")
-                    print("Executing MOVE instruction")
+                    # print("Executing MOVE instruction")
                     inst = Factory.resolve(opcode, element)
                     inst.execute()
                 case ("WRITE" | "READ"):
                     element.set("executed", "True")
-                    print("Executing WRITE/READ instruction")
+                    # print("Executing WRITE/READ instruction")
                     inst = Factory.resolve(opcode, element)
                     inst.execute()
                 case "CREATEFRAME":
                     element.set("executed", "True")
-                    print("Executing CREATEFRAME instruction")
+                    # print("Executing CREATEFRAME instruction")
                     inst = Factory.resolve(opcode, element)
                     inst.execute()
                 case "PUSHFRAME":
                     element.set("executed", "True")
-                    print("Executing PUSHFRAME instruction")
+                    # print("Executing PUSHFRAME instruction")
                     inst = Factory.resolve(opcode, element)
                     inst.execute()
                 case "POPFRAME":
                     element.set("executed", "True")
-                    print("Executing POPFRAME instruction")
+                    # print("Executing POPFRAME instruction")
                     inst = Factory.resolve(opcode, element)
                     inst.execute()
                 case "PUSHS":
                     element.set("executed", "True")
-                    print("Executing POPFRAME instruction")
+                    # print("Executing POPFRAME instruction")
                     inst = Factory.resolve(opcode, element)
                     inst.execute()
                 case "POPS":
                     element.set("executed", "True")
-                    print("Executing POPFRAME instruction")
+                    # print("Executing POPFRAME instruction")
                     inst = Factory.resolve(opcode, element)
                     inst.execute()
                 case "ADD" | "SUB" | "MUL" | "IDIV" | "LT" | "GT" | "EQ" | "AND" | "OR" | "NOT" | "INT2CHAR" | "STRI2INT":
                     element.set("executed", "True")
-                    print("Executing ADD (or other of the same kind) instruction")
+                    # print("Executing ADD (or other of the same kind) instruction")
                     inst = Factory.resolve(opcode, element)
                     inst.execute()
                 case "CONCAT" | "STRLEN" | "GETCHAR" | "SETCHAR":
                     element.set("executed", "True")
-                    print("Executing CONCAT (etc) instruction")
+                    # print("Executing CONCAT (etc) instruction")
                     inst = Factory.resolve(opcode, element)
                     inst.execute()
                 case "TYPE":
                     element.set("executed", "True")
-                    print("Executing TYPE instruction")
+                    # print("Executing TYPE instruction")
                     inst = Factory.resolve(opcode, element)
                     inst.execute()
                 case _:
